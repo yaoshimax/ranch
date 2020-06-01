@@ -45,7 +45,7 @@ init([Ref, Transport, Logger]) ->
 			shutdown => brutal_kill
 		}
 	end || AcceptorId <- lists:seq(1, NumAcceptors)],
-	{ok, {#{intensity => 1 + ceil(math:log2(NumAcceptors))}, Procs}}.
+	{ok, {#{}, Procs}}.
 
 -spec start_listen_sockets(any(), pos_integer(), module(), map(), module())
 	-> [{pos_integer(), inet:socket()}].
